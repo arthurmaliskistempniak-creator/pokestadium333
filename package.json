@@ -1,0 +1,10 @@
+{
+  "name": "pokemon-stadium-web",
+  "version": "1.0.0",
+  "description": "Batalhas Pokémon ao vivo (Mega, Z e Tera) no estilo Stadium",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED",
+  "private": true
+}

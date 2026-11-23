@@ -1,0 +1,43 @@
+Pokémon Stadium Web - versão 1 (batalhas com Mega Evolução, Movimento Z e Terastalização; IA com 4 níveis; local e online)
+
+COMO COLOCAR O SITE NO AR (instalação do zero)
+1. Crie um repositório novo no GitHub (botão New).
+2. Clique em Add file > Upload files e arraste TODOS os arquivos desta pasta de uma vez:
+   server.js, index.html, shim.js, favicon.svg, package.json, render.yaml, LEIA-ME.txt
+   Clique em Commit changes.
+3. No Render (render.com): New + > Web Service > conecte o GitHub > escolha o repositório.
+4. Confira os campos (se usar New + > Blueprint, o render.yaml já preenche tudo):
+   Runtime: Node | Build Command: echo "sem build" | Start Command: node server.js
+   Health Check Path: /healthz | Instance Type: Free
+5. Clique em Create Web Service. Em 2 a 3 minutos o endereço https://SEU-APP.onrender.com abre o jogo.
+
+COMO ATUALIZAR O SITE QUE JÁ ESTÁ NO AR
+1. Abra o repositório no GitHub > Add file > Upload files.
+2. Arraste só os arquivos que mudaram (eles substituem os antigos) e clique em Commit changes.
+3. O Render atualiza sozinho em 2 a 3 minutos. Se não atualizar, abra o serviço no Render
+   e clique em Manual Deploy > Deploy latest commit.
+
+DEPOIS DE UMA ATUALIZAÇÃO
+- O servidor reinicia e esquece as partidas e salas abertas. É normal: é só criar a sala de novo.
+- O seu time fica salvo no navegador de cada pessoa (não se perde).
+
+COMO JOGAR
+- Um jogador: escolha a dificuldade (Fácil, Normal, Difícil ou Mestre) e clique em "Batalhar contra a IA".
+- Online com amigo: um clica em "Criar sala" e passa o código de 4 letras; o outro digita o código e clica em "Entrar".
+  Também dá para usar a "Fila rápida" (entra com quem estiver procurando).
+- Local: dois jogadores no mesmo aparelho, um de cada vez (aparece uma tela de "passe o aparelho").
+- Em "Montar time" escolha até 6 Pokémon, habilidade, item, Tera Type e 4 golpes.
+- Cada lado pode usar UMA vez por batalha: Mega Evolução (item Mega Stone), Movimento Z (Cristal Z do tipo do golpe)
+  e Terastalização. Os botões aparecem em "Lutar".
+
+OBSERVAÇÕES
+- Não usa banco de dados: as partidas ficam só na memória do servidor.
+- O plano gratuito do Render dorme depois de uns 15 minutos sem ninguém. O primeiro acesso depois disso demora cerca
+  de 1 minuto. Enquanto alguém está com a página aberta, ela manda um sinal a cada 4 minutos para o servidor não dormir.
+- Se a internet cair por até 45 segundos, o jogo reconecta sozinho e a partida continua.
+- As imagens dos Pokémon vêm do Pokémon Showdown e da PokeAPI. Sem internet aparece uma bolinha colorida no lugar.
+- Dados: 240 Pokémon (formas finais da 1ª à 7ª geração) e 41 Mega Evoluções. Os golpes de cada um foram montados
+  automaticamente (golpes do tipo, cobertura e utilidade), não são os golpes oficiais do jogo.
+- Algumas habilidades ainda não têm efeito no jogo; a tela avisa "Sem efeito implementado nesta versão".
+- Ainda não existem terrenos, Trick Room, Substitute nem golpes de dois turnos.
+- Projeto de fã sem fins lucrativos. Pokémon é marca da Nintendo, Game Freak e Creatures Inc.
